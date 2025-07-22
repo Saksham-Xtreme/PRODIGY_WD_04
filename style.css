@@ -1,0 +1,168 @@
+/* Custom CSS for Royal & Elegant Theme */
+
+/* Color Palette */
+:root {
+    --color-dark-blue: #0A192F;
+    --color-dark-blue-light: #1A2E44;
+    --color-deep-purple: #2D0A2F;
+    --color-gold: #FFD700;
+    --color-silver: #C0C0C0;
+    --color-cream: #F5F5DC;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-dark-blue);
+    color: var(--color-cream);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Typography */
+.font-playfair-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Background Colors */
+.bg-dark-blue { background-color: var(--color-dark-blue); }
+.bg-dark-blue-light { background-color: var(--color-dark-blue-light); }
+.bg-deep-purple { background-color: var(--color-deep-purple); }
+.text-gold { color: var(--color-gold); }
+.text-silver { color: var(--color-silver); }
+.text-cream { color: var(--color-cream); }
+
+/* Section Headings */
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; /* Large heading */
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block; /* Allows pseudo-elements to position correctly */
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* Position below text */
+    transform: translateX(-50%);
+    width: 80px; /* Width of the underline */
+    height: 3px;
+    background-color: var(--color-gold);
+    border-radius: 2px; /* Slightly rounded underline */
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--color-gold), #DAA520); /* Gold gradient */
+    color: var(--color-dark-blue);
+    padding: 1rem 2.5rem;
+    border-radius: 9999px; /* Fully rounded */
+    font-weight: 600;
+    font-size: 1.125rem; /* text-lg */
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3); /* Subtle gold shadow */
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5); /* Stronger shadow */
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
+    padding: 0.8rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem; /* text-base */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-gold);
+    color: var(--color-dark-blue);
+    transform: translateY(-2px);
+}
+
+/* Hero Section Background Pattern (Subtle) */
+.bg-pattern {
+    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0 30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0 30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0-30V0H4v4H0v2h4v4h2V6h4V4H6zm0 30V0H4v4H0v2h4v4h2V6h4V4H6zm0 30V0H4v4H0v2h4v4h2V6h4V4H6z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    background-size: 30px 30px; /* Adjust size for subtlety */
+}
+
+
+/* Skill Card Styling */
+.skill-card {
+    background-color: var(--color-dark-blue-light);
+    padding: 2.5rem;
+    border-radius: 1rem; /* Rounded corners */
+    border: 1px solid rgba(255, 215, 0, 0.1); /* Subtle gold border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deep shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2); /* Enhanced gold shadow */
+}
+
+/* Animations (for hero section elements) */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInFromBottom 1s ease-out forwards;
+    opacity: 0; /* Hidden by default */
+}
+
+.animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
+.animate-fade-in-up.delay-400 { animation-delay: 0.4s; }
+
+/* Responsive Adjustments (Tailwind handles most, but custom tweaks) */
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 2.5rem; /* Smaller heading on mobile */
+        margin-bottom: 2rem;
+    }
+
+    .section-heading::after {
+        width: 60px;
+    }
+
+    .btn-primary {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .skill-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-6xl { font-size: 4rem; }
+    .text-8xl { font-size: 5rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-3xl { font-size: 1.8rem; }
+}
